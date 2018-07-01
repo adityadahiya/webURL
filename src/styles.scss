@@ -1,0 +1,708 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './scss/variables.scss';
+@import './scss/mixins.scss';
+
+
+
+/*Fonts rules*/
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+  url('/assets/fonts/OpenSans-Bold.woff2') format('woff2'),
+  url('/assets/fonts/OpenSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Italic'), local('OpenSans-Italic'),
+  url('/assets/fonts/OpenSans-Italic.woff2') format('woff2'),
+  url('/assets/fonts/OpenSans-Italic.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Light Italic'), local('OpenSans-LightItalic'),
+  url('/assets/fonts/OpenSans-LightItalic.woff2') format('woff2'),
+  url('/assets/fonts/OpenSans-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+  url('/assets/fonts/OpenSans-Regular.woff2') format('woff2'),
+  url('/assets/fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'),
+  url('/assets/fonts/OpenSans-SemiBoldItalic.woff2') format('woff2'),
+  url('/assets/fonts/OpenSans-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+  url('/assets/fonts/OpenSans-ExtraBold.woff2') format('woff2'),
+  url('/assets/fonts/OpenSans-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans ExtraBold Italic'), local('OpenSans-ExtraBoldItalic'),
+  url('/assets/fonts/OpenSans-ExtraBoldItalic.woff2') format('woff2'),
+  url('/assets/fonts/OpenSans-ExtraBoldItalic.woff') format('woff');
+  font-weight: 800;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+  url('/assets/fonts/OpenSans-Light.woff2') format('woff2'),
+  url('/assets/fonts/OpenSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'),
+  url('/assets/fonts/OpenSans-BoldItalic.woff2') format('woff2'),
+  url('/assets/fonts/OpenSans-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+  url('/assets/fonts/OpenSans-SemiBold.woff2') format('woff2'),
+  url('/assets/fonts/OpenSans-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url('/assets/fonts/pacifico.regular.ttf');
+  font-display: swap;
+  font-style: normal;
+}
+
+
+
+
+
+/*global fonts*/
+
+body {
+  font-family: 'Open Sans';
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+
+/*basic styles for linking*/
+
+a {
+  color: $light-gray;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
+    color: $light-gray;
+    text-decoration: none;
+  }
+  &:hover {
+    color: $active-gray;
+  }
+}
+
+a.is-active {
+  color: $active-gray;
+}
+
+
+/*colors*/
+
+.dark-gray {
+  color: $dark-gray;
+}
+
+.blue-pri {
+  color: $blue-pri;
+}
+
+
+/*container styles*/
+
+.bp-container {
+  padding: 18px 60px;
+}
+
+.round-wrap-container {
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 120%;
+  }
+}
+
+
+/*input styles*/
+
+.input-field {
+	position: relative;
+  margin: 10px 0;
+}
+
+input {
+  min-width: 280px;
+  border: 0;
+  border: 1px solid $light-gray;
+  padding: 10px 15px;
+  border-radius: 40px;
+  font-size: 10px;
+  font-family: 'Open Sans';
+  text-align: center;
+  color: $dark-gray;
+  text-align: center;
+  background: #fff;
+  &:focus {
+    outline: none;
+  }
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: $med-gray;
+  font-family: 'Open Sans';
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $med-gray;
+  font-family: 'Open Sans';
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $med-gray;
+  font-family: 'Open Sans';
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: $med-gray;
+  font-family: 'Open Sans';
+}
+
+
+/*alignment styles*/
+
+.vt-center {
+  vertical-align: middle;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.clear-fix {
+  clear: both;
+}
+
+
+/*button styels*/
+
+.btn {
+  padding: 10px 35px;
+  border-radius: 40px;
+  color: white;
+  border: 0;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.btn-pink{
+@include linear-gradient-bg(to right,
+  $pink-grad-1 0%,
+  $pink-grad-2 100%);
+  box-shadow: 0px 0px 18px $dark-blue;
+}
+
+.btn-white{
+  background-color: #fff;
+  color: $text-green;
+}
+
+
+
+/*cards styles*/
+
+.gradient-sm-box {
+  width: 42px;
+  height: 42px;
+  display: inline-block;
+  border-radius: 2px;
+  text-align: center;
+  padding-top: 8px;
+  font-size: 18px;
+  color: white;
+}
+
+.blue-gradient {
+  @include linear-gradient-bg(to bottom,
+  $dark-grad-1 0%,
+  $dark-grad-2 100%);
+}
+
+.orange-gradient {
+  @include linear-gradient-bg(to right,
+  $orange-grad-1 0%,
+  $orange-grad-2 100%);
+}
+
+.purple-gradient {
+  @include linear-gradient-bg(to right,
+  $purple-pri 0%,
+  $purple-sec 100%);
+}
+
+.yellow-gradient {
+  @include linear-gradient-bg(to right,
+  $yellow-grad-1 0%,
+  $yellow-grad-2 100%);
+}
+
+.green-gradient {
+  @include linear-gradient-bg(to right,
+  $green-grad-1 0%,
+  $green-grad-2 100%);
+}
+
+.blue-green-gradient {
+  @include linear-gradient-bg(to right,
+  $blue-green-grad-1 0%,
+  $blue-green-grad-2 100%);
+}
+
+
+/*prtials global styles*/
+
+.partial-wrapper {
+  padding-top: 70px;
+}
+
+.partial-container {
+  padding-top: 110px;
+  background-color: $background-lighter;
+}
+
+
+/*partial headers*/
+
+.partial-header {
+  z-index: 101;
+  background-color: $backgorund-light;
+  box-shadow: 0 4px 12px $shadow-gray-bg;
+  position: fixed;
+  width: 100%;
+}
+
+.partial-heading {
+  display: inline-block;
+  font-size: $fs-xl;
+  font-family: 'Open Sans';
+  margin-left: 35px;
+  vertical-align: middle;
+  margin-top: -6px;
+}
+
+.light-bold-head {
+  font-family: 'Open Sans';
+  font-size: $fs-sm;
+  color: $med-gray;
+}
+
+
+/*line styles*/
+
+.line-light {
+  height: 1px;
+  background-color: $x-light-gray;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.text-white{
+	color: white;
+}
+
+.w-600{
+  font-weight: 600;
+}
+.w-300{
+  font-weight: 300;
+}
+
+.text-green{
+  color: $text-green;
+}
+.text-skyblue{
+  color: #4eb2d4;
+}
+.text-black{
+  color: $text-black;
+}
+.text-grey{
+  color: $text-grey;
+  font-size: 8px;
+}
+
+a.orange-link{
+	color: $orange;
+	&:hover{
+		color: white;
+	}
+}
+
+a.green-link{
+	color: #40b13f;
+	&:hover{
+		color: #228B22;
+	}
+}
+
+a.white-blue-link{
+	color: white;
+	&:hover{
+		color: $sky-blue;
+	}
+}
+
+.highlight-line{
+	    display: none;
+	    left: 0;
+	    position: absolute;
+	    height: 2px;
+	    width: 100%;
+	    bottom: -27px;
+	    background-color: $sky-blue;
+	  }
+
+a.active-white-blue-link{
+	color: $sky-blue;
+	~ .highlight-line{
+	    display: inline-block;
+	}
+}
+
+/*background*/
+
+.grad-dark-bg {
+  @include linear-gradient-bg(to bottom,
+  $dark-grad-1 0%,
+  $dark-grad-2 100%)
+}
+
+.dark-bg {
+  background-color: $dark-bg;
+}
+
+.tu-container{
+  width: 100%;
+  min-height: 85vh;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  text-align: center;
+}
+
+/*wrapper*/
+.inner-wrap{
+	max-width: $screen-lg;
+	width: 100%;
+	margin: auto;
+	padding: 0 60px;
+	position: relative;
+}
+
+.partial-wrapper{
+	min-height: 100vh;
+	width: 100%;
+}
+
+.white-sm-line{
+	display: inline-block;
+	position: relative;
+	margin: auto;
+	background-color: $light-gray;
+	height: 1px;
+	width: 40px;
+}
+
+p{
+	line-height: 28px;
+	color: $light-gray;
+}
+
+.fix-bg{
+	width: 100%;
+	position: fixed;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+.card-container{
+	margin: 80px 0 20px 0;
+}
+
+.card-sm-container{
+	margin: 40px 0 20px 0;
+}
+.card{
+	background-color: #fff;
+	border-radius: 4px;
+	max-height: 400px;
+	position: relative;
+	width: 100%;
+	padding: 30px 20px;
+	text-align: center;
+	font-size: $fs-xs;
+	box-shadow: 0px 4px 12px $dark-blue;
+	min-height: 240px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	display: inline-block;
+	margin: auto;
+	margin-top: 0;
+	overflow: hidden;
+	margin-bottom: 30px;
+	.card-black-hover{
+		opacity: 0;
+		height: 0;
+		pointer-events: none;
+	}
+
+.bottom-content{
+	padding: 30px 20px;
+	bottom: 0;
+}
+	&:hover{
+		.card-black-hover{
+			padding: 30px 20px;
+			opacity: 1;
+			bottom: 0;
+			pointer-events: auto;
+			transition: all 0.3s ease-in-out;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.8);
+			
+			left: 0;
+			
+			.bottom-content{
+				transition: all 0.2s ease-in-out;
+		
+		
+		position: absolute;
+		
+		left: 0;
+		width: 100%;
+		.content{
+			font-size: 12px;
+			color: $light-gray;
+			padding-top: 10px;
+			color: white;
+			text-align: left;
+		}
+	}
+		}
+
+	}
+	
+	.card-image{
+		margin: 20px 0;
+		height: 100px; 
+		img{
+			max-height: 100%;
+		}
+	}
+
+	&.card-small-hover{
+		&:hover{
+			width:90%;
+			min-height: 220px;
+			margin-top: 10px;
+
+		}
+	}
+}
+
+.line-big{
+	height: 1px;
+	background: $light-gray;
+	width: 100%;
+	display: inline-block;
+}
+.card-white{
+	background-color: #fff;
+	color: $dark-grad-2;
+}
+
+
+.fs-sm{
+	font-size: 12px;
+
+}
+
+.modal{
+	position: fixed;
+	overflow: scroll;
+	padding-top: 100px;
+	width: 100%;
+	height: 100vh;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+}
+
+.tu-card{
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 8px;
+
+  .tu-card-body{
+    padding: 20px 25px;
+  }
+}
+.tu-card-max{
+  max-width: 520px;
+}
+
+
+.fu-card{
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  border-radius: 8px;
+  color: #fff;
+
+  .fu-card-body{
+    padding: 20px 25px;
+  }
+}
+.fu-card-max{
+  max-width: 580px;
+}
+
+.su-card{
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: left;
+
+  .su-card-body{
+    padding: 20px 25px;
+    text-align: left;
+  }
+}
+
+.su-card-max{
+  max-width: 520px;
+}
+
+@media only screen and (max-width: $screen-md){
+	.inner-wrap{
+		padding: 0 30px;
+	}
+	.card{
+	&:hover{
+		width:100%;
+		min-height: 240px;
+		margin-top: 0px;
+
+	}
+}
+}
+
+@media only screen and(max-width: $screen-sm){
+	input{
+		min-width: 100%;
+	}
+	.inner-wrap{
+		padding: 0 20px;
+	}
+
+}
+

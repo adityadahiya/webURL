@@ -1,0 +1,39 @@
+<div class="tu-container dark-bg">
+ <div class="tu-card tu-card-max">
+    <div class="tu-card-body">
+    <h3 class="text-green w-600">Register</h3>
+    <div class="row2">
+      Please fill all the details given below
+    </div>
+
+    <br><br>
+
+    <form ngNativeValidate (submit)="onRegister(name.value, email.value, password.value, $event)">
+      <div class="row">
+    <div class="col-xs-12">
+        <div class="input-field">
+          <input type="text" required name="" placeholder="Name" name="name" #name >
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="input-field">
+          <input type="email" required name="" placeholder="Email" name="email"  #email>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="input-field">
+          <input type="password" required name="" placeholder="Password" name="password"  #password>
+        </div>
+    </div>    
+    <div class="row3">
+      Already Registered? 
+      <a [routerLink]="['/auth/login']" class="green-link">Login Here</a>
+    </div>
+    <div class="row4">
+        <button class="btn-proceed" type="submit"><b>Proceed</b></button>
+    </div>
+  </div>
+    </form>
+  </div>
+</div>
+</div>

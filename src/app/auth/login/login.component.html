@@ -1,0 +1,36 @@
+<div class="tu-container dark-bg">
+   <div class="tu-card tu-card-max">
+  <form (submit)="onLogin(email.value, password.value, $event)">
+  <div class="form-wrapper">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="input-field">
+          <input type="email" required name="" placeholder="Email Address" name="email" id="admin-email" #email autofocus>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="input-field">
+          <div class="input-wrapper">
+            <input type="password" required name="Password" placeholder="Password" #password id="password-input">
+            <div class="eye-password" (click)="showPassword()">
+              <img src="./assets/images/auth/show.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="input-field submit-wrap">
+          <button class="btn-proceed" type="submit">Login</button>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="input-field">
+          <h4 class="text-white register-link">Don't have an account</h4>
+          <a [routerLink]="['/auth/signup']" class="orange-link">Register now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+</div>

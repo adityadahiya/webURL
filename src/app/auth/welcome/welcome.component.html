@@ -1,0 +1,24 @@
+<div class="tu-container dark-bg welcome-wrapper">
+  <div class="tu-card tu-card-max">
+    <div class="tu-card-body">
+      
+
+    <h3 class="text-green w-600">WELCOME</h3>
+    <form ngNativeValidate (submit)="onSubmit(address.value, $event)">
+    <div class="form-wrapper">
+    <div class="col-xs-12">
+      <div class="input-field">
+        <input type="url"  required placeholder="Address" name="address" #address/>
+      </div>
+    </div>
+    <div class="row">
+      {{url}}
+    </div>
+    <div class="row">
+      <button class="btn-proceed" type="submit" ><b>Get Address</b></button>
+    </div>
+    </div>
+  </form>
+    </div>
+  </div>
+</div>
