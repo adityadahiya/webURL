@@ -46,12 +46,12 @@ export class LoginComponent implements OnInit {
     formData.append('password', password);
     parameters.token = undefined;
     parameters.data = formData;
-    
+
     this.apiService.sendRequest(parameters, 'core')
       .subscribe(
         (data:any) => {
-          console.log(data)
           this.storage.setItem('message', data.message);
+          this.storage.setItem('token', data.token);
           this.router.navigate(['auth/welcome']);
         },
         (error:any) => {

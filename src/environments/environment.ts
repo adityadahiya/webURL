@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  base: 'http://35.238.112.120:8000/',
+  base: 'http://127.0.0.1:8000/',
 };
 /*
  * In development mode, to ignore zone related error stack frames such as

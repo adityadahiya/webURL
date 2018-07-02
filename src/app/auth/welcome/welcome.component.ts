@@ -18,7 +18,7 @@ export class WelcomeComponent implements OnInit {
   ) { }
 
   public token; 
-  public url='';
+  public result='';
 
   onSubmit(address, event: Event){
     event.preventDefault();
@@ -28,27 +28,27 @@ export class WelcomeComponent implements OnInit {
     let formData = new FormData();
     formData.append('web_url', address);
     parameters.data = formData;
-    parameters.token = undefined;
+    parameters.token = this.token;
 
     this.apiService.sendRequest(parameters, 'core')
-      .subscribe(
-        (data:any) => {
-         console.log(data);
-        this.url = data.result;
-        },
-        (error:any) => {
-         alert(error);
-        }
-      );
+    .subscribe(
+      (data:any) => {
+       if (data.result)
+        this.result = data.result;
+      else
+        this.result = data.message;
+      },
+      (error:any) => {
+       alert(error);
+      }
+    );
 
-    //this.url = 'hello fgkdbvzdkbvjzdbvjkb'
-    
-  }
+  
+}
 
   ngOnInit() {
-    this.token = this.storage.getItem('message');
-    console.log(this.token);
-    if(this.token != 'User have signed in successfully'){
+    this.token = this.storage.getItem('token');
+    if(!(this.token)){
       this.router.navigateByUrl('auth/login');
     }
   }

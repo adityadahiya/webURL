@@ -30,25 +30,25 @@ export class ApiService {
 		}
 		var url = url;
 		var data = data;
-
-		// POST request w/o token
+		
 		if (parameters.method == 'POST' && parameters.token == undefined) {
 			console.log(url);
+			const headers = new Headers({
+				'Client': "web",
+				'Key': 'KEY29062018',
+			});
 			return this.http.post(url, data, { headers: headers })
 				.map((response: Response) => response.json())
 				.catch((error) => Observable.throw(error.json().message || 'Server error'));
 		}
 		
-		// GET request
-		else if (parameters.method == 'GET') {
+		else if (parameters.method == 'POST') {
 			const headers = new Headers({
 				'Authorization': 'Bearer ' + parameters.token,
 				'Client': "web",
-				'key': 'TcS99L07QkDezB5n4Qdw',
-				'content-type': 'application/x-www-form-urlencoded'
+				'Key': 'KEY29062018',
 			});
-			//console.log('cehck')
-			return this.http.get(url, { headers: headers })
+			return this.http.post(url,data, { headers: headers })
 				.map((response: Response) => response.json())
 				.catch((error) => error.json());
 		}
